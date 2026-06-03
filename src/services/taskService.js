@@ -60,6 +60,25 @@ const deleteTask = async (id) => {
   });
 };
 
+const getTaskStats = async () => {
+  const active = await prisma.task.count({
+    where: {
+      completed: false,
+    },
+  });
+
+  const completed = await prisma.task.count({
+    where: {
+      completed: true,
+    },
+  });
+
+  return {
+    active,
+    completed,
+  };
+};
+
 module.exports = {
   createTask,
   getAllTasks,
@@ -67,4 +86,5 @@ module.exports = {
   updateTask,
   toggleTaskStatus,
   deleteTask,
+  getTaskStats
 };
