@@ -122,8 +122,6 @@ http://localhost:5000
 | PATCH  | `/tasks/:id`              | Update task details           |
 | PATCH  | `/tasks/:id/toggle`       | Toggle task completion status |
 | DELETE | `/tasks/:id`              | Delete a task                 |
-| GET    | `/tasks?status=active`    | Get active tasks              |
-| GET    | `/tasks?status=completed` | Get completed tasks           |
 | GET    | `/tasks/stats`            | Get task statistics           |
 
 ## Server Configuration
